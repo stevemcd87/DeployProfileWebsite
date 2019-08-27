@@ -8,7 +8,7 @@ import Blog from './Blog';
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
-    name: PropTypes.string.isRequired, // this is passed from the Rails view
+    profile: PropTypes.object, // .isRequired - this is passed from the Rails view
   };
   /**
    * @param props - Comes from your rails view.
@@ -17,8 +17,7 @@ export default class HelloWorld extends React.Component {
     super(props);
     // How to set initial state in ES6 class syntax
     // https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
-    this.state = { name: this.props.name };
-    this.createProfile();
+    this.state = { profile: this.props.profile };
   }
 
   createProfile = () => {
@@ -56,24 +55,29 @@ export default class HelloWorld extends React.Component {
   }
 
   render() {
+    let profile = this.state.profile;
+    console.log(this.state);
     return (
-      <Router>
-        <div>
-          <nav id="hello-world-nav" role="navigation">
-            <ul>
-              <li>
-                <Link to="/about-me">About Me</Link>
-              </li>
-              <li>
-                <Link to="/blogs">Blogs</Link>
-              </li>
-            </ul>
-          </nav>
+      <div id="hello-world">
+        {!profile && <button onClick={this.createProfile}>Create Profile</button>}
+        <Router>
+          <div>
+            <nav id="hello-world-nav" role="navigation">
+              <ul>
+                <li>
+                  <Link to="/about-me">About Me</Link>
+                </li>
+                <li>
+                  <Link to="/blogs">Blogs</Link>
+                </li>
+              </ul>
+            </nav>
 
-          <Route path="/about-me/" component={AboutMe} />
-          <Route path="/blogs/" component={Blog} />
-        </div>
-      </Router>
+            <Route path="/about-me/" component={AboutMe} />
+            <Route path="/blogs/" component={Blog} />
+          </div>
+        </Router>
+      </div>
     );
   }
 }

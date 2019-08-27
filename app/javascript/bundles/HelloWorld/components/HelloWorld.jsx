@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
-import AboutMe from './AboutMe';
+import AboutMe from './about-me/AboutMe';
 import Blog from './Blog';
 
 export default class HelloWorld extends React.Component {
@@ -27,7 +27,7 @@ export default class HelloWorld extends React.Component {
           <nav role="navigation">
             <ul>
               <li>
-                <Link to="/">About Me</Link>
+                <Link to="/about-me">About Me</Link>
               </li>
               <li>
                 <Link to="/blogs">Blogs</Link>
@@ -35,7 +35,7 @@ export default class HelloWorld extends React.Component {
             </ul>
           </nav>
 
-          <Route path="/" exact component={AboutMe} />
+          <Route path="/about-me/" component={AboutMe} />
           <Route path="/blogs/" component={Blog} />
         </div>
       </Router>

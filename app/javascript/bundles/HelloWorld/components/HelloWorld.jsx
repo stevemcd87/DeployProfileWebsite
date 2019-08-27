@@ -24,7 +24,7 @@ export default class HelloWorld extends React.Component {
     return (
       <Router>
         <div>
-          <nav role="navigation">
+          <nav id="hello-world-nav" role="navigation">
             <ul>
               <li>
                 <Link to="/about-me">About Me</Link>

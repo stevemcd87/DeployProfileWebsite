@@ -18,6 +18,41 @@ export default class HelloWorld extends React.Component {
     // How to set initial state in ES6 class syntax
     // https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
     this.state = { name: this.props.name };
+    this.createProfile();
+  }
+
+  createProfile = () => {
+    let csrfToken = document.querySelector("[name='csrf-token']").content;
+    fetch("/profiles", {
+      method: "POST",
+      body: JSON.stringify({
+        profile: {
+          first_name: "steve",
+          middle_name: "sean",
+          last_name: "mcdonald",
+          email: "hey",
+          phone_number: "555-6969"
+        }
+      }),
+      headers: {
+        "X-CSRF-Token": csrfToken,
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => {
+      console.log("response");
+      console.log(response);
+      if (!response.ok) {
+        throw response;
+      }
+      return response.json();
+    })
+    .then(res => {
+      console.log(res);
+    })
+    .catch(error => {
+      console.error("error", error);
+    });
   }
 
   render() {

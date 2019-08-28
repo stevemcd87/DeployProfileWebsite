@@ -31,24 +31,27 @@ export default class HelloWorld extends React.Component {
     return (
       <div id="hello-world">
         {!profile && <a href="/profiles/new">Create Profile</a>}
-        {profile && <ProfileHeader profile={profile} setProfileState={this.setProfileState} />}
-        <Router>
+        {profile &&
           <div>
-            <nav id="hello-world-nav" role="navigation">
-              <ul>
-                <li>
-                  <Link to="/about-me">About Me</Link>
-                </li>
-                <li>
-                  <Link to="/blogs">Blogs</Link>
-                </li>
-              </ul>
-            </nav>
+            <ProfileHeader profile={profile} setProfileState={this.setProfileState} />
+            <Router>
+              <div>
+                <nav id="hello-world-nav" role="navigation">
+                  <ul>
+                    <li>
+                      <Link to="/about-me">About Me</Link>
+                    </li>
+                    <li>
+                      <Link to="/blogs">Blogs</Link>
+                    </li>
+                  </ul>
+                </nav>
 
-            <Route path="/about-me/" component={ () => <AboutMe profile={profile} setProfileState={this.setProfileState} /> } />
-            <Route path="/blogs/" component={Blog} />
-          </div>
-        </Router>
+                <Route path="/about-me/" component={ () => <AboutMe profile={profile} setProfileState={this.setProfileState} /> } />
+                <Route path="/blogs/" component={Blog} />
+              </div>
+            </Router>
+          </div>}
       </div>
     );
   }

@@ -22,7 +22,7 @@ class LifeStoriesController < ApplicationController
   def update
     @life_story = LifeStory.find(params[:id])
     if @life_story.update(life_story_params)
-      redirect_to hello_world_path
+      redirect_to '/about-me/present'
     else
       render 'edit'
     end

@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   has_one :life_story, dependent: :destroy
+  has_many :social_networks, dependent: :destroy
 
   def full_name_to_display
     first_name = self.first_name.capitalize

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_162546) do
+ActiveRecord::Schema.define(version: 2019_08_28_225703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,5 +35,15 @@ ActiveRecord::Schema.define(version: 2019_08_28_162546) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "social_networks", force: :cascade do |t|
+    t.integer "name"
+    t.string "url_link"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_social_networks_on_profile_id"
+  end
+
   add_foreign_key "life_stories", "profiles"
+  add_foreign_key "social_networks", "profiles"
 end

@@ -21,40 +21,6 @@ export default class HelloWorld extends React.Component {
     this.state = { profile: this.props.profile };
   }
 
-  createProfile = () => {
-    let csrfToken = document.querySelector("[name='csrf-token']").content;
-    fetch("/profiles", {
-      method: "POST",
-      body: JSON.stringify({
-        profile: {
-          first_name: "steve",
-          middle_name: "sean",
-          last_name: "mcdonald",
-          email: "hey",
-          phone_number: "555-6969"
-        }
-      }),
-      headers: {
-        "X-CSRF-Token": csrfToken,
-        "Content-Type": "application/json"
-      }
-    })
-    .then(response => {
-      console.log("response");
-      console.log(response);
-      if (!response.ok) {
-        throw response;
-      }
-      return response.json();
-    })
-    .then(res => {
-      console.log(res);
-    })
-    .catch(error => {
-      console.error("error", error);
-    });
-  }
-
   setProfileState = (profile) => {
     this.setState({profile: profile})
   }

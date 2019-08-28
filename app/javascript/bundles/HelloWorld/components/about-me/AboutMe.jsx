@@ -5,8 +5,9 @@ import LifeStory from './LifeStory';
 
 const AboutMe = (props) => {
   let profile = props.profile,
-    lifeStory = profile.lifeStory,
+    lifeStory = profile.life_story,
     id = profile.id;
+    console.log(profile);
   return (
     <main id="about-me" role="main">
     <Router>
@@ -25,9 +26,9 @@ const AboutMe = (props) => {
           </ul>
         </nav>
         {!lifeStory && <a href={`/profiles/${id}/life_stories/new`}>Create Your Life Story</a> }
-        <Route path="/about-me/past" component={ () => <LifeStory timeline="past" />} />
-        <Route path="/about-me/present"  component={ () => <LifeStory timeline="present" />} />
-        <Route path="/about-me/future"  component={ () => <LifeStory timeline="future" />} />
+        <Route path="/about-me/past" component={ () => <LifeStory text={lifeStory["past"]} />} />
+        <Route path="/about-me/present"  component={ () => <LifeStory text={lifeStory["present"]} />} />
+        <Route path="/about-me/future"  component={ () => <LifeStory text={lifeStory["future"]} />} />
       </div>
     </Router>
     </main>

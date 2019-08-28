@@ -1,10 +1,10 @@
 import React from 'react';
 
 const LifeStory = (props) => {
-  let timeline = props.timeline;
+  let text = props.text;
   return (
     <section className="life-story" role="region">
-      {timeline}
+      {text}
     </section>
   );
 }

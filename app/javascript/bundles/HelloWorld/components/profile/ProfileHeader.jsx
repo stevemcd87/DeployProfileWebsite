@@ -22,11 +22,14 @@ const ProfileHeader = (props) => {
           console.error("error", error);
         });
     }
+    return false
   };
   return (
     <header id="profile-header" role="banner">
-      <a href={`/profiles/${profile.id}/edit`}>Edit</a>
-      <button onClick={deleteProfile}>Reset Profile</button>
+      <div id="profile-header-buttons" className="hidden">
+        <a href={`/profiles/${profile.id}/edit`} className="profile-header-button">Edit</a>
+        <a href="#" className="profile-header-button" onClick={deleteProfile}>Reset Profile</a>
+      </div>
       <h1>{profile.full_name}</h1>
       <h3>{profile.email}</h3>
       <h3>{profile.phone_number}</h3>

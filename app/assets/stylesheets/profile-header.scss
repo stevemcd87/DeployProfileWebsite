@@ -1,0 +1,6 @@
+#profile-header {
+  &:hover #profile-header-buttons{
+    display: flex;
+    justify-content: space-around;
+  }
+}

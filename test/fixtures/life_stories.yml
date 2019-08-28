@@ -4,10 +4,10 @@ one:
   past: MyText
   present: MyText
   future: MyText
-  belongs_to: 
+  profile: one
 
 two:
   past: MyText
   present: MyText
   future: MyText
-  belongs_to: 
+  profile: two

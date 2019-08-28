@@ -1,0 +1,18 @@
+<%= form_with(model: [ @profile, @life_story], local: true) do |form| %>
+  <%#= error_message_for(@life_story) %>
+  <p>
+    <%= form.label :past %><br>
+    <%= form.text_area :past %>
+  </p>
+  <p>
+    <%= form.label :present %><br>
+    <%= form.text_area :present %>
+  </p>
+  <p>
+    <%= form.label :future %><br>
+    <%= form.text_area :future %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

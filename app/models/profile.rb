@@ -1,5 +1,5 @@
 class Profile < ApplicationRecord
-  has_one :life_story
+  has_one :life_story, dependent: :destroy
 
   def full_name_to_display
     first_name = self.first_name.capitalize

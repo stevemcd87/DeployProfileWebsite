@@ -4,7 +4,7 @@ class CreateLifeStories < ActiveRecord::Migration[5.2]
       t.text :past
       t.text :present
       t.text :future
-      t.belongs_to :profile
+      t.references :profile, foreign_key: true
 
       t.timestamps
     end

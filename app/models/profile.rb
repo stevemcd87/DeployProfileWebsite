@@ -15,7 +15,9 @@ class Profile < ApplicationRecord
       full_name: self.full_name_to_display,
       email: self[:email],
       phone_number: self[:phone_number],
-      life_story: self.life_story
+      life_story: self.life_story,
+      social_networks: self.social_networks
     }
   end
+  
 end

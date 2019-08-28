@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 import AboutMe from './about-me/AboutMe';
+import SocialNetworks from './SocialNetworks';
 import Blog from './Blog';
 import ProfileHeader from './profile/ProfileHeader';
 
@@ -26,7 +27,8 @@ export default class HelloWorld extends React.Component {
   }
 
   render() {
-    let profile = this.state.profile;
+    let profile = this.state.profile,
+      socialNetworks = profile.social_networks.length > 0 ? profile.social_networks : null;
     console.log(this.state);
     return (
       <div id="hello-world">
@@ -34,6 +36,7 @@ export default class HelloWorld extends React.Component {
         {profile &&
           <div>
             <ProfileHeader profile={profile} setProfileState={this.setProfileState} />
+            {!socialNetworks && <button>Add SocialNetworks</button>}
             <Router>
               <div>
                 <nav id="hello-world-nav" role="navigation">

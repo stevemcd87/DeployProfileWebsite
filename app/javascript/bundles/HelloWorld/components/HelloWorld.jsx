@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import AboutMe from './about-me/AboutMe';
 import Blog from './Blog';
+import ProfileHeader from './ProfileHeader';
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
@@ -60,6 +61,7 @@ export default class HelloWorld extends React.Component {
     return (
       <div id="hello-world">
         {!profile && <a href="/profiles/new">Create Profile</a>}
+        {profile && <ProfileHeader profile={profile}/>}
         <Router>
           <div>
             <nav id="hello-world-nav" role="navigation">

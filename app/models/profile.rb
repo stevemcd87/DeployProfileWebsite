@@ -1,4 +1,6 @@
 class Profile < ApplicationRecord
+  has_one :life_story
+
   def full_name_to_display
     first_name = self.first_name.capitalize
     middle_name = self.middle_name ? "#{self.middle_name.first.capitalize}." : ""

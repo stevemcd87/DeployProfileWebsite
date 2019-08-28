@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  past: MyText
+  present: MyText
+  future: MyText
+  belongs_to: 
+
+two:
+  past: MyText
+  present: MyText
+  future: MyText
+  belongs_to: 

@@ -5,6 +5,11 @@ class HelloWorldController < ApplicationController
 
   def index
     @profles = Profile.all
-    @profile = Profile.first
+    profile = Profile.first
+    @profile = {
+      full_name: profile.full_name_to_display,
+      email: profile[:email],
+      phone_number: profile[:phone_number]
+    }
   end
 end

@@ -6,6 +6,6 @@ class HelloWorldController < ApplicationController
   def index
     @profles = Profile.all
     profile = Profile.first
-    @profile = profile.front_end_profile if profile
+    @profile = profile.front_end_profile
   end
 end

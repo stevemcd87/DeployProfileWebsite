@@ -1,9 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Past from './Past';
-import Present from './Present';
-import Future from './Future';
+import LifeStory from './LifeStory';
 
 const AboutMe = () => {
   return (
@@ -24,9 +22,9 @@ const AboutMe = () => {
           </ul>
         </nav>
 
-        <Route path="/about-me/past" component={Past} />
-        <Route path="/about-me/present"  component={Present} />
-        <Route path="/about-me/future"  component={Future} />
+        <Route path="/about-me/past" component={ () => <LifeStory timeline="past" />} />
+        <Route path="/about-me/present"  component={ () => <LifeStory timeline="present" />} />
+        <Route path="/about-me/future"  component={ () => <LifeStory timeline="future" />} />
       </div>
     </Router>
     </main>

@@ -13,7 +13,8 @@ class Profile < ApplicationRecord
       id: self[:id],
       full_name: self.full_name_to_display,
       email: self[:email],
-      phone_number: self[:phone_number]
+      phone_number: self[:phone_number],
+      life_story: self.life_story
     }
   end
 end

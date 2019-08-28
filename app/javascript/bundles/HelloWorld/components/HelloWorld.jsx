@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import AboutMe from './about-me/AboutMe';
 import Blog from './Blog';
-import ProfileHeader from './ProfileHeader';
+import ProfileHeader from './profile/ProfileHeader';
 
 export default class HelloWorld extends React.Component {
   static propTypes = {

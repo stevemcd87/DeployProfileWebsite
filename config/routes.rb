@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :profiles, only: [:create, :show]
+  resources :profiles, except: [:show]
   get 'hello_world', to: 'hello_world#index'
   get 'about-me', to: 'hello_world#index'
   get 'about-me/*story', to: 'hello_world#index'

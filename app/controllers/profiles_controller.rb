@@ -1,15 +1,16 @@
 class ProfilesController < ApplicationController
-  def show
-    @profile = Profile.params[:id]
-    render json: @profile
+  def new
+    @profile = Profile.new
   end
 
   def create
     redirect_to hello_world_path if Profile.all.count >= 1
     @profile = Profile.new(profile_params)
-    p @profile
-    # @profile.save
-    render json: @profile
+    if @profile.save
+      redirect_to hello_world_path
+    else
+      render 'new'
+    end
   end
 
   private

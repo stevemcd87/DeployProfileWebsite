@@ -1,10 +1,13 @@
 import React from 'react';
 
 const LifeStory = (props) => {
-  let text = props.text;
+  let text = props.text,
+    displayHTML = (text) => {
+      return <div dangerouslySetInnerHTML={{__html:text}}></div>
+    };
   return (
-    <section className="life-story" role="region">
-      {text}
+    <section id="life-story" role="region">
+      {displayHTML(text)}
     </section>
   );
 }

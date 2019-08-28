@@ -13,7 +13,7 @@ class LifeStoriesController < ApplicationController
     @profile = Profile.find(params[:profile_id])
     @life_story = @profile.build_life_story(life_story_params)
     if @life_story.save
-      redirect_to hello_world_path
+      redirect_to '/about-me/present'
     else
       render 'new'
     end
@@ -26,6 +26,12 @@ class LifeStoriesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @life_story = LifeStory.find(params[:id])
+
+    render json: {profile: nil} if @life_story.destroy
   end
 
   private

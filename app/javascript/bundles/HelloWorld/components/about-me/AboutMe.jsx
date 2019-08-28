@@ -5,18 +5,40 @@ import LifeStory from './LifeStory';
 
 const AboutMe = (props) => {
   let profile = props.profile,
-    lifeStory = profile.life_story;
+    setProfileState = props.setProfileState,
+    lifeStory = profile.life_story,
+    deleteLifeStories = () => {
+      let confirmed = confirm("Are you sure?");
+      if (confirmed) {
+        fetch(`/profiles/${profile.id}/life_stories/${lifeStory.id}`, {
+          method: "delete"
+        })
+          .then(response => {
+            if (!response.ok) {
+              throw response;
+            }
+            return response.json();
+          })
+          .then(res => {
+            window.location.href = "/about-me/"
+          })
+          .catch(error => {
+            console.error("error", error);
+          });
+      }
+      return false
+    };
     console.log(profile);
   return (
     <main id="about-me" role="main">
     <Router>
       <div>
-        {!lifeStory && <a href={`/profiles/${profile.id}/life_stories/new`}>Create Your Life Story</a> }
+        {!lifeStory && <a href={`/profiles/${profile.id}/life_stories/new`} className="life-story-button">Create Your Life Story</a> }
         {lifeStory &&
           <nav role="navigation">
             <ul>
               <li>
-                <a href={`/profiles/${profile.id}/life_stories/${lifeStory.id}/edit`}>Edit</a>
+                <a href={`/profiles/${profile.id}/life_stories/${lifeStory.id}/edit`}>Edit Life Stories</a>
               </li>
               <li>
                 <Link to="/about-me/past">Past</Link>
@@ -26,6 +48,9 @@ const AboutMe = (props) => {
               </li>
               <li>
                 <Link to="/about-me/future">Future</Link>
+              </li>
+              <li>
+                <a href="#" className="life-story-button" onClick={deleteLifeStories}>Reset Life Stories</a>
               </li>
             </ul>
           </nav>}

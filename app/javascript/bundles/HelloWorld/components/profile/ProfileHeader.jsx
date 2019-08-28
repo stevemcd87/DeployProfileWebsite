@@ -27,7 +27,7 @@ const ProfileHeader = (props) => {
   return (
     <header id="profile-header" role="banner">
       <div id="profile-header-buttons" className="hidden">
-        <a href={`/profiles/${profile.id}/edit`} className="profile-header-button">Edit</a>
+        <a href={`/profiles/${profile.id}/edit`} className="profile-header-button">Edit Profile</a>
         <a href="#" className="profile-header-button" onClick={deleteProfile}>Reset Profile</a>
       </div>
       <h1>{profile.full_name}</h1>

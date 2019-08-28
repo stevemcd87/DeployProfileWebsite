@@ -45,7 +45,7 @@ export default class HelloWorld extends React.Component {
               </ul>
             </nav>
 
-            <Route path="/about-me/" component={ () => <AboutMe profile={profile} /> } />
+            <Route path="/about-me/" component={ () => <AboutMe profile={profile} setProfileState={this.setProfileState} /> } />
             <Route path="/blogs/" component={Blog} />
           </div>
         </Router>

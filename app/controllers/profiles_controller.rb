@@ -18,13 +18,19 @@ class ProfilesController < ApplicationController
   end
 
   def update
-  @profile = Profile.find(params[:id])
-  if @profile.update(profile_params)
-    redirect_to hello_world_path
-  else
-    render 'edit'
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      redirect_to hello_world_path
+    else
+      render 'edit'
+    end
   end
-end
+
+  def destroy
+    @profile = Profile.find(params[:id])
+
+    render json: {profile: nil} if @profile.destroy
+  end
 
   private
 

@@ -54,14 +54,18 @@ export default class HelloWorld extends React.Component {
       console.error("error", error);
     });
   }
-// {!profile && <button onClick={this.createProfile}>Create Profile</button>}
+
+  setProfileState = (profile) => {
+    this.setState({profile: profile})
+  }
+
   render() {
     let profile = this.state.profile;
     console.log(this.state);
     return (
       <div id="hello-world">
         {!profile && <a href="/profiles/new">Create Profile</a>}
-        {profile && <ProfileHeader profile={profile}/>}
+        {profile && <ProfileHeader profile={profile} setProfileState={this.setProfileState} />}
         <Router>
           <div>
             <nav id="hello-world-nav" role="navigation">

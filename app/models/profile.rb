@@ -5,4 +5,13 @@ class Profile < ApplicationRecord
     last_name = self.last_name.capitalize
     "#{first_name} #{middle_name} #{last_name}"
   end
+
+  def front_end_profile
+    {
+      id: self[:id],
+      full_name: self.full_name_to_display,
+      email: self[:email],
+      phone_number: self[:phone_number]
+    }
+  end
 end

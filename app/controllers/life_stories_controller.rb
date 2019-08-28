@@ -1,9 +1,12 @@
 class LifeStoriesController < ApplicationController
   def new
-    p '=================================='
-    p params
     @profile = Profile.find(params[:profile_id])
     @life_story =  @profile.build_life_story
+  end
+
+  def edit
+    @profile = Profile.find(params[:profile_id])
+    @life_story =  @profile.life_story
   end
 
   def create
@@ -13,6 +16,15 @@ class LifeStoriesController < ApplicationController
       redirect_to hello_world_path
     else
       render 'new'
+    end
+  end
+
+  def update
+    @life_story = LifeStory.find(params[:id])
+    if @life_story.update(life_story_params)
+      redirect_to hello_world_path
+    else
+      render 'edit'
     end
   end
 

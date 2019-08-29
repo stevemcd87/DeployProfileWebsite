@@ -1,11 +1,11 @@
 import React from 'react';
 
-const SOcialNetworks = () => {
+const SocialNetworks = () => {
   return (
     <article id="about-me" role="article">
-      SOcialNetworks
+      SocialNetworks
     </article>
   );
 }
 
-export default SOcialNetworks;
+export default SocialNetworks;

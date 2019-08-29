@@ -37,6 +37,7 @@ export default class HelloWorld extends React.Component {
           <div>
             <ProfileHeader profile={profile} setProfileState={this.setProfileState} />
             {!socialNetworks && <a href={`/profiles/${profile.id}/social_networks/new`}>Add SocialNetworks</a>}
+            {socialNetworks && <SocialNetworks />}
             <Router>
               <div>
                 <nav id="hello-world-nav" role="navigation">

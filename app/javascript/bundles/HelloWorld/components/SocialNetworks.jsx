@@ -1,10 +1,19 @@
 import React from 'react';
 
-const SocialNetworks = () => {
+const SocialNetworks = (props) => {
+  let profile = props.profile,
+    socialNetworks = profile.social_networks;
+  console.log(props);
   return (
-    <article id="about-me" role="article">
-      SocialNetworks
-    </article>
+    <div className="social-networks" role="links">
+      {socialNetworks.map((socialNetwork,ind)=>{
+        return (
+          <div key={ind}>
+            <p>{socialNetwork.name}</p>
+          </div>
+        )
+      })}
+    </div>
   );
 }
 

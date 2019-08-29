@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :profiles, except: [:show] do
-    resources :life_stories, except: [:show]
+  resources :profiles, except: [:index, :show] do
+    resources :life_stories, except: [:index, :show]
+    resources :social_networks, except: [:index, :show]
   end
   get 'hello_world', to: 'hello_world#index'
   get 'about-me', to: 'hello_world#index'

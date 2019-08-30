@@ -33,6 +33,12 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+
+    render json: {profile: nil} if @project.destroy
+  end
+
   private
 
   def project_params

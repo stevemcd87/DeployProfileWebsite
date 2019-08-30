@@ -28,7 +28,7 @@ export default class HelloWorld extends React.Component {
 
   render() {
     let profile = this.state.profile,
-      socialNetworks = profile.social_networks.length > 0 ? profile.social_networks : null;
+      socialNetworks = profile && profile.social_networks.length > 0 ? profile.social_networks : null;
     console.log(this.state);
     return (
       <div id="hello-world">

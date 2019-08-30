@@ -8,7 +8,7 @@ class SocialNetworksController < ApplicationController
     @profile = Profile.find(params[:profile_id])
     @social_network =  @profile.social_networks.new(social_network_params)
     if @social_network.save
-      redirect_to '/about-me/present'
+      redirect_to '/about-me/'
     else
       render 'new'
     end
@@ -21,7 +21,7 @@ class SocialNetworksController < ApplicationController
   def update
     @social_network = SocialNetwork.find(params[:id])
     if @social_network.update(social_network_params)
-      redirect_to '/about-me/present'
+      redirect_to '/about-me/'
     else
       render 'edit'
     end

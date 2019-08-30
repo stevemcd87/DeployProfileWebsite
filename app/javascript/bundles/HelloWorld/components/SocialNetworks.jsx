@@ -33,7 +33,7 @@ const SocialNetworks = (props) => {
         return (
           <div key={ind}>
             <a href={`/profiles/${profile.id}/social_networks/${socialNetwork.id}/edit`} target="_blank">Edit Social Network</a>
-            <a href={socialNetwork.url_link} target="_blank"><i class={`fa fa-${socialNetwork.name}`}></i></a>
+            <a href={socialNetwork.url_link} target="_blank"><i className={`fa fa-${socialNetwork.name}`}></i></a>
             <a href="#"  onClick={()=> deleteSocialNetwork(socialNetwork.id)}>Remove Social Network</a>
           </div>
         )

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import AboutMe from './about-me/AboutMe';
 import SocialNetworks from './SocialNetworks';
+import Projects from './Projects';
 import Blog from './Blog';
 import ProfileHeader from './profile/ProfileHeader';
 
@@ -47,6 +48,9 @@ export default class HelloWorld extends React.Component {
                       <Link to="/about-me">About Me</Link>
                     </li>
                     <li>
+                      <Link to="/portfolio">Portfolio</Link>
+                    </li>
+                    <li>
                       <Link to="/blogs">Blogs</Link>
                     </li>
                   </ul>
@@ -54,6 +58,7 @@ export default class HelloWorld extends React.Component {
 
                 <Route path="/about-me/" component={ () => <AboutMe profile={profile} setProfileState={this.setProfileState} /> } />
                 <Route path="/blogs/" component={Blog} />
+                <Route path="/portfolio/" component={ () => <Projects profile={profile} setProfileState={this.setProfileState} /> } />
               </div>
             </Router>
           </div>}

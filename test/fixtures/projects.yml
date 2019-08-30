@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: 
+  name: MyString
+  url_link: MyString
   technologies: MyString
   description: MyString
-  url_link: MyString
+  profile: one
 
 two:
-  name: 
+  name: MyString
+  url_link: MyString
   technologies: MyString
   description: MyString
-  url_link: MyString
+  profile: two

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_042439) do
+ActiveRecord::Schema.define(version: 2019_08_30_195738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,11 +37,13 @@ ActiveRecord::Schema.define(version: 2019_08_30_042439) do
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
+    t.string "url_link"
     t.string "technologies", array: true
     t.string "description"
-    t.string "url_link"
+    t.bigint "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_projects_on_profile_id"
   end
 
   create_table "social_networks", force: :cascade do |t|
@@ -54,5 +56,6 @@ ActiveRecord::Schema.define(version: 2019_08_30_042439) do
   end
 
   add_foreign_key "life_stories", "profiles"
+  add_foreign_key "projects", "profiles"
   add_foreign_key "social_networks", "profiles"
 end

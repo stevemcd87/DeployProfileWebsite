@@ -1,0 +1,21 @@
+<%= form_with(model: [ :profile, @project], local: true) do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :technologies %><br>
+    <%= form.text_field :technologies %>
+  </p>
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_field :description %>
+  </p>
+  <p>
+    <%= form.label :url_link %><br>
+    <%= form.text_field :url_link %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

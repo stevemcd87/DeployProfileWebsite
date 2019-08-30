@@ -6,18 +6,30 @@ class ProjectsController < ApplicationController
 
   def create
     @profile = Profile.find(params[:profile_id])
-    p '================'
-    p params
     techs =  params[:project][:technologies].split(',').map { |tech| tech.chomp  }
     proj_params = project_params
     proj_params[:technologies] = techs
-    p proj_params
-
     @project =  @profile.projects.new(proj_params)
     if @project.save
       redirect_to hello_world_path
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @project =  Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    techs =  params[:project][:technologies].split(',').map { |tech| tech.chomp  }
+    proj_params = project_params
+    proj_params[:technologies] = techs
+    if @project.update(proj_params)
+      redirect_to '/about-me/'
+    else
+      render 'edit'
     end
   end
 

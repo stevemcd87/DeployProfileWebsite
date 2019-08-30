@@ -1,7 +1,7 @@
 <%= form_with(model: [ @profile, @profile.social_networks.build], local: true) do |form| %>
   <p>
     <%= form.label :name %><br>
-    <%= form.text_area :name %>
+    <%= form.select :name, SocialNetwork.names.keys.to_a %>
   </p>
   <p>
     <%= form.label :url_link %><br>

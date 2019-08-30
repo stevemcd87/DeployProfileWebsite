@@ -20,7 +20,8 @@ const AboutMe = (props) => {
             return response.json();
           })
           .then(res => {
-            window.location.href = "/about-me/"
+            window.location.href = "/about-me/";
+            // return false
           })
           .catch(error => {
             console.error("error", error);

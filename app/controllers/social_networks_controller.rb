@@ -15,11 +15,7 @@ class SocialNetworksController < ApplicationController
   end
 
   def edit
-    # p '======================'
-    # p params
-    # @profile = Profile.find(params[:profile_id])
     @social_network =  SocialNetwork.find(params[:id])
-    p @social_network
   end
 
   def update
@@ -29,6 +25,12 @@ class SocialNetworksController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @social_network = SocialNetwork.find(params[:id])
+
+    render json: {profile: nil} if @social_network.destroy
   end
 
   private

@@ -9,7 +9,7 @@ const SocialNetworks = (props) => {
       {socialNetworks.map((socialNetwork,ind)=>{
         return (
           <div key={ind}>
-            <p>{socialNetwork.name}</p>
+            <a href={socialNetwork.url_link} target="_blank"><i class={`fa fa-${socialNetwork.name}`}></i></a>
           </div>
         )
       })}

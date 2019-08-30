@@ -40,6 +40,7 @@ export default class HelloWorld extends React.Component {
             {socialNetworks && <SocialNetworks profile={profile} />}
             <Router>
               <div>
+
                 <nav id="hello-world-nav" role="navigation">
                   <ul>
                     <li>

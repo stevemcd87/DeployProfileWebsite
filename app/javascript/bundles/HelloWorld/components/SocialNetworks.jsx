@@ -6,6 +6,7 @@ const SocialNetworks = (props) => {
   console.log(props);
   return (
     <div className="social-networks" role="links">
+      <a href={`/profiles/${profile.id}/social_networks/new`}>Add SocialNetwork</a>
       {socialNetworks.map((socialNetwork,ind)=>{
         return (
           <div key={ind}>

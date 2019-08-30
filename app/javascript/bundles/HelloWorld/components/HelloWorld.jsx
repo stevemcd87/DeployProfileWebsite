@@ -36,7 +36,7 @@ export default class HelloWorld extends React.Component {
         {profile &&
           <div>
             <ProfileHeader profile={profile} setProfileState={this.setProfileState} />
-            {!socialNetworks && <a href={`/profiles/${profile.id}/social_networks/new`}>Add SocialNetworks</a>}
+            {!socialNetworks && <a href={`/profiles/${profile.id}/social_networks/new`}>Add SocialNetwork</a>}
             {socialNetworks && <SocialNetworks profile={profile} />}
             <Router>
               <div>

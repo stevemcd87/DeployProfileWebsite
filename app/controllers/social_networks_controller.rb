@@ -1,6 +1,7 @@
 class SocialNetworksController < ApplicationController
   def new
     @profile = Profile.find(params[:profile_id])
+      @social_network =  @profile.social_networks.new
   end
 
   def create
@@ -10,6 +11,23 @@ class SocialNetworksController < ApplicationController
       redirect_to '/about-me/present'
     else
       render 'new'
+    end
+  end
+
+  def edit
+    # p '======================'
+    # p params
+    # @profile = Profile.find(params[:profile_id])
+    @social_network =  SocialNetwork.find(params[:id])
+    p @social_network
+  end
+
+  def update
+    @social_network = SocialNetwork.find(params[:id])
+    if @social_network.update(social_network_params)
+      redirect_to '/about-me/present'
+    else
+      render 'edit'
     end
   end
 

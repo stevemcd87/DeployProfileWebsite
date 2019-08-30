@@ -1,11 +1,11 @@
-<%= form_with(model: [ @profile, @profile.social_networks.build], local: true) do |form| %>
+<%= form_with(model: [ :profile, @social_network], local: true) do |form| %>
   <p>
     <%= form.label :name %><br>
     <%= form.select :name, SocialNetwork.names.keys.to_a %>
   </p>
   <p>
     <%= form.label :url_link %><br>
-    <%= form.text_area :url_link %>
+    <%= form.text_field :url_link %>
   </p>
   <p>
     <%= form.submit %>

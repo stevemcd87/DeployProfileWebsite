@@ -11,6 +11,7 @@ const SocialNetworks = (props) => {
         return (
           <div key={ind}>
             <a href={socialNetwork.url_link} target="_blank"><i class={`fa fa-${socialNetwork.name}`}></i></a>
+            <a href={`/profiles/${profile.id}/social_networks/${socialNetwork.id}/edit`} target="_blank">Edit Social Network</a>
           </div>
         )
       })}

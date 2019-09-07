@@ -1,3 +1,4 @@
+<div class='nav-bar'>
 <p class="navbar-text pull-right">
 <% if admin_signed_in? %>
   Logged in as <strong><%= current_admin.email %></strong>.
@@ -7,5 +8,6 @@
   <%= link_to "Login", new_admin_session_path, :class => 'navbar-link'  %>
 <% end %>
 </p>
+</div>
 
 <%= react_component("HelloWorld", props: {profile: @profile, signedIn: @signed_in}, prerender: false) %>

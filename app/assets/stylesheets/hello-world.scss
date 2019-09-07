@@ -1,7 +1,15 @@
 @import "font-awesome";
-@import './nav.scss';
-@import './profile-header.scss';
+@import "./nav.scss";
+@import "./profile-header.scss";
 
 .hidden {
   display: none;
 }
+
+#profile-header {
+  text-align: center;
+
+  h3 {
+    margin: none;
+  }
+} // end of #profile-header

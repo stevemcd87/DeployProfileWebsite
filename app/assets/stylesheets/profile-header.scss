@@ -1,5 +1,7 @@
-#profile-header {
-  &:hover #profile-header-buttons{
+#profile-display {
+  text-align: center;
+
+  &:hover #profile-header-buttons {
     display: flex;
     justify-content: space-around;
   }

@@ -47,13 +47,11 @@ export default class HelloWorld extends React.Component {
         {!profile && <a href="/profiles/new"> Create Profile </a>}{" "}
         {profile && (
           <div>
-            <div className="profile-header">
-              <ProfileHeader
-                signedIn={signedIn}
-                profile={profile}
-                setProfileState={this.setProfileState}
-              />{" "}
-            </div>
+            <ProfileHeader
+              signedIn={signedIn}
+              profile={profile}
+              setProfileState={this.setProfileState}
+            />{" "}
             {!socialNetworks && (
               <a href={`/profiles/${profile.id}/social_networks/new`}>
                 {" "}

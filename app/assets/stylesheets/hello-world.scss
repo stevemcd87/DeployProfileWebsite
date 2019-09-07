@@ -1,15 +1,13 @@
 @import "font-awesome";
 @import "./nav.scss";
 @import "./profile-header.scss";
+@import "./social_networks.scss";
+
+a {
+  display: flex;
+  justify-content: center;
+}
 
 .hidden {
   display: none;
 }
-
-#profile-header {
-  text-align: center;
-
-  h3 {
-    margin: none;
-  }
-} // end of #profile-header

@@ -26,9 +26,9 @@ const ProfileHeader = props => {
       return false;
     };
   return (
-    <header id="profile-header" role="banner">
+    <header role="banner">
       {signedIn && (
-        <div id="profile-header-buttons" className="hidden">
+        <div className="hidden">
           <a
             href={`/profiles/${profile.id}/edit`}
             className="profile-header-button"
@@ -40,9 +40,11 @@ const ProfileHeader = props => {
           </a>
         </div>
       )}
-      <h1>{profile.full_name}</h1>
-      <h3>{profile.email}</h3>
-      <h3>{profile.phone_number}</h3>
+      <div id="profile-display">
+        <h1>{profile.full_name}</h1>
+        <h3>{profile.email}</h3>
+        <h3>{profile.phone_number}</h3>
+      </div>
     </header>
   );
 };

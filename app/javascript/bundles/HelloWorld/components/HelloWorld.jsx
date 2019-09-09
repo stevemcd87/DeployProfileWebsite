@@ -33,6 +33,16 @@ export default class HelloWorld extends React.Component {
     });
   };
 
+  makeActive = (unorderedListId, event) => {
+    let unorderedList = document.getElementById(unorderedListId),
+      elementClicked = event.target;
+    for (let i = 0; i < unorderedList.children.length; i += 1) {
+      let child = unorderedList.childNodes[i]
+      child.classList.remove('active')
+    }
+    elementClicked.parentNode.classList.add('active');
+  }
+
   render() {
     let profile = this.state.profile,
       signedIn = this.state.signedIn,
@@ -64,17 +74,17 @@ export default class HelloWorld extends React.Component {
             <Router>
               <div>
                 <nav id="hello-world-nav" role="navigation">
-                  <ul>
+                  <ul id="nav-ul">
                     <li>
-                      <Link to="/about-me/present"> About Me </Link>{" "}
-                    </li>{" "}
+                      <Link to="/about-me/present" onClick={(e)=>this.makeActive("nav-ul", e)}> About Me </Link>
+                    </li>
                     <li>
-                      <Link to="/portfolio"> Portfolio </Link>{" "}
-                    </li>{" "}
-                    <li>
-                      <Link to="/blogs"> Blogs </Link>{" "}
-                    </li>{" "}
-                  </ul>{" "}
+                      <Link to="/portfolio" onClick={(e)=>this.makeActive("nav-ul", e)}> Portfolio </Link>
+                    </li>
+                    <li >
+                      <Link to="/blogs" onClick={(e)=>this.makeActive("nav-ul", e)}> Blogs </Link>
+                    </li>
+                  </ul>
                 </nav>
                 <Route
                   path="/about-me/present"

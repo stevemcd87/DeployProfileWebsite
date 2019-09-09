@@ -3,6 +3,7 @@ import React from "react";
 const Projects = props => {
   let profile = props.profile,
     projects = profile.projects,
+    signedIn = props.signedIn,
     deleteProject = projectId => {
       let confirmed = confirm("Are you sure?");
       if (confirmed) {
@@ -32,18 +33,26 @@ const Projects = props => {
       {projects.map((project, ind) => {
         return (
           <div key={ind}>
-            <a
-              href={`/profiles/${profile.id}/projects/${project.id}/edit`}
-              target="_blank"
-            >
-              Edit Project
-            </a>
+            {signedIn && (
+              <div>
+                <a
+                  href={`/profiles/${profile.id}/projects/${project.id}/edit`}
+                  target="_blank"
+                >
+                  Edit Project
+                </a>
+              </div>
+            )}
             <a href={project.url_link} target="_blank">
               {project.name}
             </a>
-            <a href="#" onClick={() => deleteProject(project.id)}>
-              Remove Project
-            </a>
+            {signedIn && (
+              <div>
+                <a href="#" onClick={() => deleteProject(project.id)}>
+                  Remove Project
+                </a>
+              </div>
+            )}
           </div>
         );
       })}

@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
 
+gem 'devise'
 
 gem 'react_on_rails', '11.1.4'
 gem "font-awesome-rails"

@@ -1,7 +1,24 @@
+@import "./variables.scss";
 @import "font-awesome";
-@import './nav.scss';
-@import './profile-header.scss';
+@import "./nav.scss";
+@import "./profile-header.scss";
+@import "./social_networks.scss";
+
+body {
+  margin: 0;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+}
 
 .hidden {
   display: none;
+}
+
+#hello-world {
+  width: 100vw;
+}
+#profile-display {
 }

@@ -1,5 +1,23 @@
-#profile-header {
-  &:hover #profile-header-buttons{
+@import "./variables.scss";
+
+#profile-display {
+  width: 100%;
+  background-color: $linkinBlueColor;
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+  h1 {
+    margin: 0;
+    padding: 3px;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 1px;
+  }
+
+  &:hover #profile-header-buttons {
     display: flex;
     justify-content: space-around;
   }

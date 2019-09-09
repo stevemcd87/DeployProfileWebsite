@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    redirect_to hello_world_path if Profile.all.count >= 1
+    return redirect_to root_path if Profile.all.count >= 1
     @profile = Profile.new(profile_params)
     if @profile.save
       redirect_to hello_world_path

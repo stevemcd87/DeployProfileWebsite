@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const Projects = (props) => {
+const Projects = props => {
   let profile = props.profile,
     projects = profile.projects,
-    deleteProject = (projectId) => {
+    signedIn = props.signedIn,
+    deleteProject = projectId => {
       let confirmed = confirm("Are you sure?");
       if (confirmed) {
         fetch(`/profiles/${profile.id}/projects/${projectId}`, {
@@ -23,23 +24,40 @@ const Projects = (props) => {
             console.error("error", error);
           });
       }
-      return false
+      return false;
     };
   console.log(props);
   return (
     <div className="projects" role="links">
       <a href={`/profiles/${profile.id}/projects/new`}>Add Project</a>
-      {projects.map((project,ind)=>{
+      {projects.map((project, ind) => {
         return (
           <div key={ind}>
-            <a href={`/profiles/${profile.id}/projects/${project.id}/edit`} target="_blank">Edit Project</a>
-            <a href={project.url_link} target="_blank">{project.name}</a>
-            <a href="#"  onClick={()=> deleteProject(project.id)}>Remove Project</a>
+            {signedIn && (
+              <div>
+                <a
+                  href={`/profiles/${profile.id}/projects/${project.id}/edit`}
+                  target="_blank"
+                >
+                  Edit Project
+                </a>
+              </div>
+            )}
+            <a href={project.url_link} target="_blank">
+              {project.name}
+            </a>
+            {signedIn && (
+              <div>
+                <a href="#" onClick={() => deleteProject(project.id)}>
+                  Remove Project
+                </a>
+              </div>
+            )}
           </div>
-        )
+        );
       })}
     </div>
   );
-}
+};
 
 export default Projects;

@@ -1,3 +1,35 @@
 // Place all the styles related to the SocialNetworks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./variables.scss";
+
+#social-networks {
+  margin-bottom: 40px;
+
+  a {
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+  }
+
+  #social-network-icons {
+    display: flex;
+    justify-content: space-around;
+
+    .fa-github {
+      color: $githubIconColor;
+    }
+
+    .fa-linkedin {
+      color: $linkinBlueColor;
+    }
+
+    .fa-twitter {
+      color: $twitterBlue;
+    }
+  }
+
+  i {
+    font-size: 40px;
+  }
+} // end of #social_networks

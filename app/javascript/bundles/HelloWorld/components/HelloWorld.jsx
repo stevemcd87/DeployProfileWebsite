@@ -33,56 +33,61 @@ export default class HelloWorld extends React.Component {
     });
   };
 
-  makeActive = (unorderedListId, event) => {
+  makeActive = (unorderedListId, event, activeClassName) => {
     let unorderedList = document.getElementById(unorderedListId),
       elementClicked = event.target;
     for (let i = 0; i < unorderedList.children.length; i += 1) {
       let child = unorderedList.childNodes[i]
-      child.classList.remove('active')
+      child.classList.remove(activeClassName)
     }
-    elementClicked.parentNode.classList.add('active');
+    elementClicked.parentNode.classList.add(activeClassName);
   }
 
   render() {
     let profile = this.state.profile,
       signedIn = this.state.signedIn,
+      pathName = window.location.pathname.split('/'),
       socialNetworks =
         profile && profile.social_networks.length > 0
           ? profile.social_networks
-          : null;
+          : null,
+      displayActive = (sectionName, className) => {
+        return sectionName === pathName[1] ? className : '';
+      }
     console.log(this.state);
+    console.log(window.location.pathname);
     return (
       <div id="hello-world">
-        {" "}
-        {!profile && <a href="/profiles/new"> Create Profile </a>}{" "}
+
+        {!profile && <a href="/profiles/new"> Create Profile </a>}
         {profile && (
           <div>
             <ProfileHeader
               signedIn={signedIn}
               profile={profile}
               setProfileState={this.setProfileState}
-            />{" "}
+            />
             {!socialNetworks && (
               <a href={`/profiles/${profile.id}/social_networks/new`}>
-                {" "}
-                Add SocialNetwork{" "}
+
+                Add SocialNetwork
               </a>
-            )}{" "}
+            )}
             {socialNetworks && (
               <SocialNetworks profile={profile} signedIn={signedIn} />
-            )}{" "}
+            )}
             <Router>
               <div>
                 <nav id="hello-world-nav" role="navigation">
                   <ul id="nav-ul">
-                    <li>
-                      <Link to="/about-me/present" onClick={(e)=>this.makeActive("nav-ul", e)}> About Me </Link>
+                    <li className={displayActive('about-me', "active")}>
+                      <Link to="/about-me/present" onClick={(e)=>this.makeActive("nav-ul", e, "active")}> About Me </Link>
                     </li>
-                    <li>
-                      <Link to="/portfolio" onClick={(e)=>this.makeActive("nav-ul", e)}> Portfolio </Link>
+                    <li className={displayActive('portfolio', "active")}>
+                      <Link to="/portfolio" onClick={(e)=>this.makeActive("nav-ul", e, "active")}> Portfolio </Link>
                     </li>
-                    <li >
-                      <Link to="/blogs" onClick={(e)=>this.makeActive("nav-ul", e)}> Blogs </Link>
+                    <li className={displayActive('blogs', "active")}>
+                      <Link to="/blogs" onClick={(e)=>this.makeActive("nav-ul", e, "active")}> Blogs </Link>
                     </li>
                   </ul>
                 </nav>
@@ -93,10 +98,11 @@ export default class HelloWorld extends React.Component {
                       profile={profile}
                       setProfileState={this.setProfileState}
                       signedIn={signedIn}
+                      makeActive={this.makeActive}
                     />
                   )}
                 />
-                <Route path="/blogs/" component={Blog} />{" "}
+                <Route path="/blogs/" component={Blog} />
                 <Route
                   path="/portfolio/"
                   component={() => (
@@ -106,10 +112,10 @@ export default class HelloWorld extends React.Component {
                     />
                   )}
                 />
-              </div>{" "}
-            </Router>{" "}
+              </div>
+            </Router>
           </div>
-        )}{" "}
+        )}
       </div>
     );
   }

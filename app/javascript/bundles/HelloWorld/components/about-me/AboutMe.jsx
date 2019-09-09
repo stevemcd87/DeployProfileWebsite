@@ -7,6 +7,7 @@ const AboutMe = (props) => {
   let profile = props.profile,
     setProfileState = props.setProfileState,
     signedIn = props.signedIn,
+    makeActive = props.makeActive,
     lifeStory = profile.life_story,
     deleteLifeStories = () => {
       let confirmed = confirm("Are you sure?");
@@ -38,20 +39,20 @@ const AboutMe = (props) => {
         {!lifeStory && <a href={`/profiles/${profile.id}/life_stories/new`} className="life-story-button">Create Your Life Story</a> }
         {lifeStory &&
           <nav role="navigation">
-            <ul>
+            <ul id='about-me-nav'>
             {signedIn &&
               <li>
                 <a href={`/profiles/${profile.id}/life_stories/${lifeStory.id}/edit`}>Edit</a>
               </li>
             }
               <li>
-                <Link to="/about-me/past">Past</Link>
+                <Link to="/about-me/past" onClick={(e)=>makeActive("about-me-nav", e, 'active-life-story')} >Past</Link>
+              </li>
+              <li className="active-life-story">
+                <Link to="/about-me/present" onClick={(e)=>makeActive("about-me-nav", e, 'active-life-story')} >Present</Link>
               </li>
               <li>
-                <Link to="/about-me/present">Present</Link>
-              </li>
-              <li>
-                <Link to="/about-me/future">Future</Link>
+                <Link to="/about-me/future" onClick={(e)=>makeActive("about-me-nav", e, 'active-life-story')} >Future</Link>
               </li>
               {signedIn &&
                 <li>

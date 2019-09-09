@@ -58,7 +58,9 @@ export default class HelloWorld extends React.Component {
                 Add SocialNetwork{" "}
               </a>
             )}{" "}
-            {socialNetworks && <SocialNetworks profile={profile} />}{" "}
+            {socialNetworks && (
+              <SocialNetworks profile={profile} signedIn={signedIn} />
+            )}{" "}
             <Router>
               <div>
                 <nav id="hello-world-nav" role="navigation">

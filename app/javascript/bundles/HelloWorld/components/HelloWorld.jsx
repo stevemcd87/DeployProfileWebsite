@@ -66,7 +66,7 @@ export default class HelloWorld extends React.Component {
                 <nav id="hello-world-nav" role="navigation">
                   <ul>
                     <li>
-                      <Link to="/about-me"> About Me </Link>{" "}
+                      <Link to="/about-me/present"> About Me </Link>{" "}
                     </li>{" "}
                     <li>
                       <Link to="/portfolio"> Portfolio </Link>{" "}
@@ -77,7 +77,7 @@ export default class HelloWorld extends React.Component {
                   </ul>{" "}
                 </nav>
                 <Route
-                  path="/about-me/"
+                  path="/about-me/present"
                   component={() => (
                     <AboutMe
                       profile={profile}

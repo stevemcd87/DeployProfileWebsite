@@ -6,6 +6,7 @@ import LifeStory from './LifeStory';
 const AboutMe = (props) => {
   let profile = props.profile,
     setProfileState = props.setProfileState,
+    signedIn = props.signedIn,
     lifeStory = profile.life_story,
     deleteLifeStories = () => {
       let confirmed = confirm("Are you sure?");
@@ -38,9 +39,11 @@ const AboutMe = (props) => {
         {lifeStory &&
           <nav role="navigation">
             <ul>
+            {signedIn &&
               <li>
-                <a href={`/profiles/${profile.id}/life_stories/${lifeStory.id}/edit`}>Edit Life Stories</a>
+                <a href={`/profiles/${profile.id}/life_stories/${lifeStory.id}/edit`}>Edit</a>
               </li>
+            }
               <li>
                 <Link to="/about-me/past">Past</Link>
               </li>
@@ -50,15 +53,17 @@ const AboutMe = (props) => {
               <li>
                 <Link to="/about-me/future">Future</Link>
               </li>
-              <li>
-                <a href="#" className="life-story-button" onClick={deleteLifeStories}>Reset Life Stories</a>
-              </li>
+              {signedIn &&
+                <li>
+                  <a href="#" className="life-story-button" onClick={deleteLifeStories}>Reset</a>
+                </li>
+              }
             </ul>
           </nav>}
 
-        <Route path="/about-me/past" component={ () => <LifeStory text={lifeStory["past"]} />} />
-        <Route path="/about-me/present"  component={ () => <LifeStory text={lifeStory["present"]} />} />
-        <Route path="/about-me/future"  component={ () => <LifeStory text={lifeStory["future"]} />} />
+        <Route path="/about-me/past" component={ () => <LifeStory text={lifeStory["past"]} signedIn={signedIn} />} />
+        <Route path="/about-me/present"  component={ () => <LifeStory text={lifeStory["present"]} signedIn={signedIn} />} />
+        <Route path="/about-me/future"  component={ () => <LifeStory text={lifeStory["future"]} signedIn={signedIn} />} />
       </div>
     </Router>
     </main>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins, controllers: { registrations: "registrations"}
   resources :profiles, except: [:index, :show] do
     resources :life_stories, except: [:index, :show]
     resources :social_networks, except: [:index, :show]

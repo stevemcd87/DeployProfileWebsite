@@ -29,7 +29,7 @@ const Projects = props => {
   console.log(props);
   return (
     <div className="projects" role="links">
-      <a href={`/profiles/${profile.id}/projects/new`}>Add Project</a>
+      {signedIn && <a href={`/profiles/${profile.id}/projects/new`}>Add Project</a>}
       {projects.map((project, ind) => {
         return (
           <div key={ind}>
@@ -43,9 +43,14 @@ const Projects = props => {
                 </a>
               </div>
             )}
-            <a href={project.url_link} target="_blank">
-              {project.name}
-            </a>
+            <h3>{project.name}</h3>
+            <p>{project.technologies.join(" , ")}</p>
+            <p>
+              {project.description}
+              <a href={project.url_link} target="_blank">
+                Visit Here
+              </a>
+            </p>
             {signedIn && (
               <div>
                 <a href="#" onClick={() => deleteProject(project.id)}>

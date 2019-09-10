@@ -7,10 +7,21 @@ nav ul {
 }
 
   #hello-world-nav ul {
-    margin: 0;
-    padding:  0  0 .2em 0;
+    padding:  0;
     font-size: 1.2em;
-    border-bottom: 2px solid $primary;
+    li {
+      background-color: $primary;
+      border: 2px solid $secondary;
+      border-radius: 40%;
+      padding: .5em;
+      &.active {
+        background-color: $secondary;
+        color: $primary;
+        border: 2px solid $primary;
+        font-weight: bold;
+      }
+    }
+
   }
 
   #about-me-nav {
@@ -24,11 +35,7 @@ nav ul {
     }
   }
 
-  .active {
-    background-color: $primary;
-    color: $secondary;
-    border-radius: 0  0 20% 20%;
-  }
+
 
   .active-life-story {
   background-color: $primary;

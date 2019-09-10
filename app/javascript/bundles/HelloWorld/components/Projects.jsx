@@ -28,11 +28,11 @@ const Projects = props => {
     };
   console.log(props);
   return (
-    <div className="projects" role="links">
+    <div id="projects" role="links">
       {signedIn && <a href={`/profiles/${profile.id}/projects/new`}>Add Project</a>}
       {projects.map((project, ind) => {
         return (
-          <div key={ind}>
+          <div className="project" key={ind}>
             {signedIn && (
               <div>
                 <a

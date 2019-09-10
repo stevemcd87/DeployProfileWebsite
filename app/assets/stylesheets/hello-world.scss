@@ -4,6 +4,7 @@
 @import "./profile-header.scss";
 @import "./social_networks.scss";
 @import "./life_stories.scss";
+@import "./projects.scss";
 
 html {
   background-color: $primary;
@@ -15,7 +16,9 @@ html {
 body {
   position: relative;
   margin: 0 auto;
-  background-color: $secondary;
+  background-image: url("mushroom.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 95vw;
   max-width: 777px;
 
@@ -32,5 +35,5 @@ a {
 }
 
 #router-div {
-  background-color: $primary;
+  // background-color: $primary;
 }

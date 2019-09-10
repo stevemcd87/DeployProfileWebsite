@@ -1,5 +1,41 @@
+@import "./variables.scss";
+
 nav ul {
   display: flex;
   list-style: none;
   justify-content: space-around;
 }
+
+  #hello-world-nav ul {
+    // background-color: $primary;
+    // color: $secondary;
+    margin: 0;
+    padding:  0  0 .2em 0;
+    font-size: 1.2em;
+    border-bottom: 2px solid $primary;
+  }
+
+  #about-me-nav {
+    margin: auto;
+    padding: .5em 0;
+    width: 75vw;
+    border-bottom: 5px solid $primary;
+    background-color: $secondary;
+    li {
+      padding: .5em;
+    }
+  }
+
+  .active {
+    // background-color: $secondary;
+    // color: $primary;
+    background-color: $primary;
+    color: $secondary;
+    border-radius: 0  0 20% 20%;
+  }
+
+  .active-life-story {
+  background-color: $primary;
+  color: $secondary;
+  border-radius: 40%;
+  }

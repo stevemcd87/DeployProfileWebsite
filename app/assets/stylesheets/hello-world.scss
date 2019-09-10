@@ -5,27 +5,32 @@
 @import "./social_networks.scss";
 @import "./life_stories.scss";
 
+html {
+  background-color: $primary;
+  margin: 0 auto;
+  position: relative;
+  min-height: 95vh;
+}
+
 body {
-  margin: 0;
+  position: relative;
+  margin: 0 auto;
+  background-color: $secondary;
+  width: 95vw;
+  max-width: 777px;
+
+  // box-sizing: border-box;
 }
 
-.active {
-  background-color: limegreen;
-  padding: 1em;
-
+a {
+  padding: .5em;
+  color: inherit;
 }
-
-// a {
-//   display: flex;
-//   justify-content: center;
-// }
 
 .hidden {
   display: none;
 }
 
-#hello-world {
-  width: 100vw;
-}
-#profile-display {
+#router-div {
+  background-color: $primary;
 }

@@ -1,11 +1,11 @@
 @import "./variables.scss";
 
 #profile-display {
-  width: 100%;
-  background-color: $linkinBlueColor;
-  color: white;
+  // width: 100%;
+  background-color: $primary;
+  color: $secondary;
   text-align: center;
-  padding: 20px;
+  padding: 1em;
 
   h1 {
     margin: 0;

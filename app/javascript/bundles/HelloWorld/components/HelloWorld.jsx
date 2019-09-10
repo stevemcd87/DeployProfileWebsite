@@ -86,9 +86,10 @@ export default class HelloWorld extends React.Component {
                     <li className={displayActive('portfolio', "active")}>
                       <Link to="/portfolio" onClick={(e)=>this.makeActive("nav-ul", e, "active")}> Portfolio </Link>
                     </li>
-                    <li className={displayActive('blogs', "active")}>
-                      <Link to="/blogs" onClick={(e)=>this.makeActive("nav-ul", e, "active")}> Blogs </Link>
-                    </li>
+{     //             <li className={displayActive('blogs', "active")}>
+      //              <Link to="/blogs" onClick={(e)=>this.makeActive("nav-ul", e, "active")}> Blogs </Link>
+    //              </li>
+  }
                   </ul>
                 </nav>
                 <Route
@@ -102,7 +103,8 @@ export default class HelloWorld extends React.Component {
                     />
                   )}
                 />
-                <Route path="/blogs/" component={Blog} />
+                {//<Route path="/blogs/" component={Blog} />
+                }
                 <Route
                   path="/portfolio/"
                   component={() => (

@@ -4,12 +4,11 @@
 @import "./variables.scss";
 
 #projects {
-  border-bottom: 5px solid $primary;
   padding-bottom: 1em;
   .project {
     background-color: $secondary;
     color: $primary;
-    max-width: 70vw;
+    max-width: 70%;
     margin: 0 auto;
     text-align: center;
     border: 2px solid $primary;

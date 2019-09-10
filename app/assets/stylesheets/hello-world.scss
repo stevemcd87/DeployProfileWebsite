@@ -9,20 +9,20 @@
 html {
   background-color: $primary;
   margin: 0 auto;
-  position: relative;
-  min-height: 95vh;
+  min-height: 99.5vh;
+  display: flex;
+  align-items: center;
 }
 
 body {
   position: relative;
-  margin: 0 auto;
+  margin: auto;
   background-image: url("mushroom.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 95vw;
   max-width: 777px;
-
-  // box-sizing: border-box;
+  border: 2px solid $secondary;
 }
 
 a {
@@ -35,5 +35,6 @@ a {
 }
 
 #router-div {
+  min-height: 60vh;
   // background-color: $primary;
 }

@@ -3,7 +3,14 @@
 nav ul {
   display: flex;
   list-style: none;
+  color: $secondary;
+  max-width: 75%;
   justify-content: space-around;
+  margin: auto;
+  li {
+    padding: .5em;
+  }
+
 }
 
   #hello-world-nav ul {
@@ -13,7 +20,7 @@ nav ul {
       background-color: $primary;
       border: 2px solid $secondary;
       border-radius: 40%;
-      padding: .5em;
+      margin-bottom: 1em;
       &.active {
         background-color: $secondary;
         color: $primary;
@@ -25,20 +32,17 @@ nav ul {
   }
 
   #about-me-nav {
-    margin: auto;
-    padding: .5em 0;
-    width: 75vw;
-    border-bottom: 5px solid $primary;
-    background-color: $secondary;
+    padding: .5em 0 0 0;
+    max-width: 75%;
+    background-color: $primary;
+    box-sizing: border-box;
     li {
-      padding: .5em;
+      &.active-life-story {
+      background-color: $secondary;
+      color: $primary;
+      border-radius: 40% 40% 0 0;
+      font-weight: bold;
+      }
     }
-  }
 
-
-
-  .active-life-story {
-  background-color: $primary;
-  color: $secondary;
-  border-radius: 40%;
   }

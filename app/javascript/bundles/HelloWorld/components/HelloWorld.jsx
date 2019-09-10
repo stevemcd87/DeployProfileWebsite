@@ -55,7 +55,6 @@ export default class HelloWorld extends React.Component {
         return sectionName === pathName[1] ? className : '';
       }
     console.log(this.state);
-    console.log(window.location.pathname);
     return (
       <div id="hello-world">
 

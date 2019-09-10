@@ -4,16 +4,15 @@
 @import "./variables.scss";
 
 #about-me {
-  // border-bottom: 1em solid $primary;
   padding-bottom: 1em;
-}
-
-#life-story {
-  background-color: $secondary;
-  box-sizing: border-box;
-  max-width: 75%;
-  margin: auto;
-  min-height: 100px;
-  padding: 1em 3em;
-  text-align: center;
+  #life-story {
+    background-color: $secondary;
+    box-sizing: border-box;
+    max-width: 75%;
+    margin: auto;
+    min-height: 100px;
+    padding: 1em 3em;
+    text-align: center;
+    color: $primary;
+  }
 }

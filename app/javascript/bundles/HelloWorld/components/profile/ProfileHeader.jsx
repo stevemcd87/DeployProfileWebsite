@@ -28,7 +28,7 @@ const ProfileHeader = props => {
   return (
     <header role="banner">
       {signedIn && (
-        <div className="hidden">
+        <div className="hidden" id="profile-header-buttons">
           <a
             href={`/profiles/${profile.id}/edit`}
             className="profile-header-button"

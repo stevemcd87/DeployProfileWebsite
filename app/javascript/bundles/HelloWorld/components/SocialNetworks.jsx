@@ -30,7 +30,7 @@ const SocialNetworks = props => {
   return (
     <div id="social-networks" role="links">
       {signedIn && (
-        <div>
+        <div className="sn-add-link hidden">
           <a href={`/profiles/${profile.id}/social_networks/new`}>
             Add SocialNetwork
           </a>
@@ -40,12 +40,9 @@ const SocialNetworks = props => {
       <div id="social-network-icons">
         {socialNetworks.map((socialNetwork, ind) => {
           return (
-            <div key={ind}>
-              <a href={socialNetwork.url_link} target="_blank">
-                <i className={`fa fa-${socialNetwork.name}`}></i>
-              </a>
+            <div className="social-network-icon" key={ind}>
               {signedIn && (
-                <div>
+                <div className="sn-edit-links hidden">
                   <a
                     href={`/profiles/${profile.id}/social_networks/${socialNetwork.id}/edit`}
                     target="_blank"
@@ -60,6 +57,9 @@ const SocialNetworks = props => {
                   </a>
                 </div>
               )}
+              <a href={socialNetwork.url_link} target="_blank">
+                <i className={`fa fa-${socialNetwork.name}`}></i>
+              </a>
             </div>
           );
         })}

@@ -1,24 +1,23 @@
 @import "./variables.scss";
 
-#profile-display {
-  // width: 100%;
-  // background-color: $primary;
-  color: $secondary;
-  text-align: center;
-  padding: 1em;
-
-  h1 {
-    margin: 0;
-    padding: 3px;
-  }
-
-  h3 {
-    margin: 0;
-    padding: 1px;
-  }
-
+header {
   &:hover #profile-header-buttons {
     display: flex;
     justify-content: space-around;
+  }
+  #profile-display {
+    color: $secondary;
+    text-align: center;
+    padding: 1em;
+
+    h1 {
+      margin: 0;
+      padding: 3px;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 1px;
+    }
   }
 }

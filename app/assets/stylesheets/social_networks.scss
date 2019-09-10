@@ -4,34 +4,43 @@
 @import "./variables.scss";
 
 #social-networks {
-  // margin-bottom: 40px;
+  text-align: center;
   padding:1em;
-  // border-bottom: 7px solid $primary;
-
+  i {
+    font-size: 40px;
+  }
   a {
     font-size: 20px;
     font-weight: bolder;
     text-decoration: none;
   }
 
+  &:hover .sn-add-link {
+    display: flex;
+    justify-content: center;
+  }
+
   #social-network-icons {
     display: flex;
     justify-content: space-around;
-
     .fa-github {
       color: $githubIconColor;
     }
-
     .fa-linkedin {
       color: $linkinBlueColor;
     }
-
     .fa-twitter {
       color: $twitterBlue;
     }
-  }
-
-  i {
-    font-size: 40px;
+    .social-network-icon{
+      display: flex;
+      flex-direction: column;
+      a {
+        text-align: center;
+      }
+      &:hover .sn-edit-links{
+      display: inherit;
+      }
+    }
   }
 } // end of #social_networks

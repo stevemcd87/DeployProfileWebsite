@@ -63,7 +63,7 @@ const AboutMe = (props) => {
           </nav>}
 
         <Route path="/about-me/past" component={ () => <LifeStory text={lifeStory["past"]} signedIn={signedIn} />} />
-        <Route path="/about-me/present"  component={ () => <LifeStory text={lifeStory["present"]} signedIn={signedIn} />} />
+        <Route path="/about-me/present"  component={ () => <LifeStory text={lifeStory["presently"]} signedIn={signedIn} />} />
         <Route path="/about-me/future"  component={ () => <LifeStory text={lifeStory["future"]} signedIn={signedIn} />} />
       </div>
     </Router>

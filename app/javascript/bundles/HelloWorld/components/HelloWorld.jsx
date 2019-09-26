@@ -110,6 +110,7 @@ export default class HelloWorld extends React.Component {
                     <Projects
                       profile={profile}
                       setProfileState={this.setProfileState}
+                      signedIn={signedIn}
                     />
                   )}
                 />

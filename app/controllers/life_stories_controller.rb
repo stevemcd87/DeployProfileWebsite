@@ -37,6 +37,6 @@ class LifeStoriesController < ApplicationController
   private
 
   def life_story_params
-    params.require(:life_story).permit(:past, :present, :future)
+    params.require(:life_story).permit(:past, :presently, :future)
   end
 end

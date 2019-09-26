@@ -32,10 +32,12 @@ const AboutMe = (props) => {
       return false
     };
     console.log(profile);
+    console.log(lifeStory);
   return (
     <main id="about-me" role="main">
     <Router>
       <div>
+
         {!lifeStory && <a href={`/profiles/${profile.id}/life_stories/new`} className="life-story-button">Create Your Life Story</a> }
         {lifeStory &&
           <nav role="navigation">

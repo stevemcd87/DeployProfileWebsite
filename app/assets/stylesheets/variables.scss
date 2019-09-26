@@ -6,3 +6,15 @@ $dark-grn: #666317;
 
 $primary: $dark-grn;
 $secondary: $light-grn;
+
+.dark-bg {
+  background-color: $primary;
+  border: 2px solid $secondary;
+  color: $secondary;
+}
+
+.light-bg {
+  background-color: $secondary;
+  border: 2px solid $primary;
+  color: $primary;
+}

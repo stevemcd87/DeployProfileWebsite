@@ -1,6 +1,6 @@
 <%= react_component("HelloWorld", props: {profile: @profile, signedIn: @signed_in}, prerender: false) %>
 
-<div class='nav-bar'>
+<div id='login-status' class="dark-bg">
   <p>
     <% if admin_signed_in? %>
       Logged in as: <strong><%= current_admin.email %></strong>

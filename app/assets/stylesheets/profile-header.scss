@@ -1,12 +1,15 @@
 @import "./variables.scss";
 
 header {
+  max-width: 450px;
+  margin: 0 auto;
+  margin-bottom: 1em;
   &:hover #profile-header-buttons {
     display: flex;
     justify-content: space-around;
   }
   #profile-display {
-    color: $secondary;
+
     text-align: center;
     padding: 1em;
 

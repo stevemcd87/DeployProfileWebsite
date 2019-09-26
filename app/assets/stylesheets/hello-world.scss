@@ -24,11 +24,27 @@ body {
   width: 95vw;
   max-width: 777px;
   border: 2px solid $secondary;
+  min-height: 80vh;
+  text-align: center;
+  padding: 1em;
 }
 
 a {
+  margin: .5em;
   padding: .5em;
   color: inherit;
+}
+
+i {
+  padding: .5em;
+  border-radius: 50%;
+}
+
+#login-status {
+  max-width: 350px;
+  border-radius: 40%;
+  margin: 0 auto;
+  padding: 1em;
 }
 
 .hidden {
@@ -36,6 +52,6 @@ a {
 }
 
 #router-div {
-  min-height: 60vh;
+  min-height: 40vh;
   // background-color: $primary;
 }

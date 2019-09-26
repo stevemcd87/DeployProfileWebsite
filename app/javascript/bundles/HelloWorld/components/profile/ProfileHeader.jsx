@@ -26,7 +26,7 @@ const ProfileHeader = props => {
       return false;
     };
   return (
-    <header role="banner">
+    <header role="banner" className="light-bg">
       {signedIn && (
         <div className="hidden" id="profile-header-buttons">
           <a

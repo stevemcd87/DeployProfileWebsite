@@ -58,7 +58,7 @@ const SocialNetworks = props => {
                 </div>
               )}
               <a href={socialNetwork.url_link} target="_blank">
-                <i className={`fa fa-${socialNetwork.name}`}></i>
+                <i className={`fa fa-${socialNetwork.name} dark-bg`}></i>
               </a>
             </div>
           );

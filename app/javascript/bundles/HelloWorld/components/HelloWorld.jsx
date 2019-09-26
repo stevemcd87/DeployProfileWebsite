@@ -58,7 +58,7 @@ export default class HelloWorld extends React.Component {
     return (
       <div id="hello-world">
 
-        {!profile && <a href="/profiles/new"> Create Profile </a>}
+        {!profile && <a href="/profiles/new" className="dark-bg"> Create Profile </a>}
         {profile && (
           <div>
             <ProfileHeader
@@ -67,8 +67,7 @@ export default class HelloWorld extends React.Component {
               setProfileState={this.setProfileState}
             />
             {!socialNetworks && (
-              <a href={`/profiles/${profile.id}/social_networks/new`}>
-
+              <a href={`/profiles/${profile.id}/social_networks/new`} className="dark-bg">
                 Add SocialNetwork
               </a>
             )}

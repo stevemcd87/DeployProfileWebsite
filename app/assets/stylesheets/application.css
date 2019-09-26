@@ -16,7 +16,7 @@
 /*
   *= require font-awesome
   */
-@import "./variables.scss";
+/* @import "./variables.scss"; */
 
 body {
   margin: 0;

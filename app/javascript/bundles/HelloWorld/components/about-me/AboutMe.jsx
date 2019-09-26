@@ -38,7 +38,7 @@ const AboutMe = (props) => {
     <Router>
       <div>
 
-        {!lifeStory && <a href={`/profiles/${profile.id}/life_stories/new`} className="life-story-button">Create Your Life Story</a> }
+        {(!lifeStory && signedIn) && <a href={`/profiles/${profile.id}/life_stories/new`} className="life-story-button">Create Your Life Story</a> }
         {lifeStory &&
           <nav role="navigation">
             <ul id='about-me-nav'>

@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-
+  layout "hello_world"
   before_action :one_admin_registered?, only: [:new, :create]
 
   protected

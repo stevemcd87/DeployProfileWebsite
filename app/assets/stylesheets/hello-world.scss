@@ -13,11 +13,12 @@ html {
   display: flex;
   align-items: center;
   color: $secondary;
+  justify-content: center;
 }
 
 body {
   position: relative;
-  margin: auto;
+  // margin: 0 auto;
   background-image: url("mushroom.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,6 +46,15 @@ i {
   border-radius: 40%;
   margin: 0 auto;
   padding: 1em;
+}
+
+#create-profile-button {
+    padding: 1.5em;
+  a{
+    padding: 1.5em;
+    border-radius: 40%;
+  }
+
 }
 
 .hidden {
